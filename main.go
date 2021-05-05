@@ -18,9 +18,8 @@ func goDotEnvVar(key string) string {
 func main() {
 	a := App{}
 	a.Initialize(
-		// os.Getenv("APP_DB_USERNAME"),
-		// os.Getenv("APP_DB_PASSWORD"),
-		// os.Getenv("APP_DB_NAME"))
+		goDotEnvVar("POSTGRES_HOST"),
+		goDotEnvVar("POSTGRES_PORT"),
 		goDotEnvVar("POSTGRES_USER"),
 		goDotEnvVar("POSTGRES_PASSWORD"),
 		goDotEnvVar("POSTGRES_DB"))
