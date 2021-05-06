@@ -3,7 +3,7 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
-	"fmt"
+	// "fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -18,7 +18,7 @@ type App struct {
 }
 
 func (a *App) Initialize(url string) {
-	fmt.Printf("%s", url)
+	// fmt.Printf("%s", url)
 
 	var err error
 	// a.DB, err = sql.Open("postgres", connectionString)
