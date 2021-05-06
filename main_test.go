@@ -29,7 +29,8 @@ func TestMain(m *testing.M) {
 		goDotEnvVar("POSTGRES_PORT"),
 		goDotEnvVar("POSTGRES_USER"),
 		goDotEnvVar("POSTGRES_PASSWORD"),
-		goDotEnvVar("POSTGRES_DB"))
+		goDotEnvVar("POSTGRES_DB"),
+		goDotEnvVar("POSTGRES_URL"))
 
 	ensureTableExists()
 	code := m.Run()

@@ -17,7 +17,8 @@ type App struct {
 	DB     *sql.DB
 }
 
-func (a *App) Initialize(host, port, user, password, dbname string) {
+func (a *App) Initialize(host, port, user, password, dbname, url string) {
+	println(host, port, user, password, dbname, url)
 	newPort, errC := strconv.Atoi(port)
 	if errC != nil {
 		log.Fatal(errC)
@@ -26,10 +27,15 @@ func (a *App) Initialize(host, port, user, password, dbname string) {
 	// connectionString := fmt.Sprintf("host=%s port=%d user=%s "+
 	// 	"password=%s dbname=%s sslmode=disable",
 	// 	host, newPort, user, password, dbname)
-	connectionString := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, newPort, user, password, dbname)
+	// connectionString := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, newPort, user, password, dbname)
+	// connStr := "postgres://pqgotest:password@localhost/pqgotest?sslmode=verify-full"
+	// connectionString := fmt.Sprintf("postgres://%s:%s:%d@%s/%s?sslmode=disable", user, password, newPort, host, dbname)
+	// fmt.Printf("%s", connectionString)
+	fmt.Printf("%s", url)
 
 	var err error
-	a.DB, err = sql.Open("postgres", connectionString)
+	// a.DB, err = sql.Open("postgres", connectionString)
+	a.DB, err = sql.Open("postgres", "postgres://jonp:jonp@localhost:5432/go_rest_api?sslmode=disable")
 	if err != nil {
 		log.Fatal(err)
 	}

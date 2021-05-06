@@ -22,7 +22,8 @@ func main() {
 		goDotEnvVar("POSTGRES_PORT"),
 		goDotEnvVar("POSTGRES_USER"),
 		goDotEnvVar("POSTGRES_PASSWORD"),
-		goDotEnvVar("POSTGRES_DB"))
+		goDotEnvVar("POSTGRES_DB"),
+		goDotEnvVar("POSTGRES_URL"))
 
 	a.Run(":8010")
 }
