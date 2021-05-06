@@ -25,11 +25,11 @@ func goDotEnvVar(key string) string {
 
 func TestMain(m *testing.M) {
 	a.Initialize(
-		goDotEnvVar("POSTGRES_HOST"),
-		goDotEnvVar("POSTGRES_PORT"),
-		goDotEnvVar("POSTGRES_USER"),
-		goDotEnvVar("POSTGRES_PASSWORD"),
-		goDotEnvVar("POSTGRES_DB"),
+		// goDotEnvVar("POSTGRES_HOST"),
+		// goDotEnvVar("POSTGRES_PORT"),
+		// goDotEnvVar("POSTGRES_USER"),
+		// goDotEnvVar("POSTGRES_PASSWORD"),
+		// goDotEnvVar("POSTGRES_DB"),
 		goDotEnvVar("POSTGRES_URL"))
 
 	ensureTableExists()
@@ -102,7 +102,7 @@ func TestGetNonExistentProduct(t *testing.T) {
 func TestCreateProduct(t *testing.T) {
 	clearTable()
 
-	var jsonStr = []byte(`{"name": "test", "price": 11.22}`)
+	var jsonStr = []byte(`{"name": "test product", "price": 11.22}`)
 	req, _ := http.NewRequest("POST", "/product", bytes.NewBuffer(jsonStr))
 	req.Header.Set("Content-Type", "application/json")
 	response := executeRequest(req)

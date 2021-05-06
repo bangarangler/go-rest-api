@@ -18,11 +18,11 @@ func goDotEnvVar(key string) string {
 func main() {
 	a := App{}
 	a.Initialize(
-		goDotEnvVar("POSTGRES_HOST"),
-		goDotEnvVar("POSTGRES_PORT"),
-		goDotEnvVar("POSTGRES_USER"),
-		goDotEnvVar("POSTGRES_PASSWORD"),
-		goDotEnvVar("POSTGRES_DB"),
+		// goDotEnvVar("POSTGRES_HOST"),
+		// goDotEnvVar("POSTGRES_PORT"),
+		// goDotEnvVar("POSTGRES_USER"),
+		// goDotEnvVar("POSTGRES_PASSWORD"),
+		// goDotEnvVar("POSTGRES_DB"),
 		goDotEnvVar("POSTGRES_URL"))
 
 	a.Run(":8010")
