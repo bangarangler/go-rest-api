@@ -17,20 +17,7 @@ type App struct {
 	DB     *sql.DB
 }
 
-// func (a *App) Initialize(host, port, user, password, dbname, url string) {
 func (a *App) Initialize(url string) {
-	// println(host, port, user, password, dbname, url)
-	// newPort, errC := strconv.Atoi(port)
-	// if errC != nil {
-	// 	log.Fatal(errC)
-	// }
-	// fmt.Println(fmt.Sprintf("newPort is %d", newPort))
-	// connectionString := fmt.Sprintf("host=%s port=%d user=%s "+ "password=%s dbname=%s sslmode=disable",
-	// 	host, newPort, user, password, dbname)
-	// connectionString := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, newPort, user, password, dbname)
-	// connStr := "postgres://pqgotest:password@localhost/pqgotest?sslmode=verify-full"
-	// connectionString := fmt.Sprintf("postgres://%s:%s:%d@%s/%s?sslmode=disable", user, password, newPort, host, dbname)
-	// fmt.Printf("%s", connectionString)
 	fmt.Printf("%s", url)
 
 	var err error
